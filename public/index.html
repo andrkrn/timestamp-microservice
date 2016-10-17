@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timestamp Microservice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.min.css">
+  <style>
+    body {
+      padding-top: 4em;
+    }
+  </style>
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <div class="content">
+        <h1 class="title">API Basejump: Timestamp Microservice</h1>
+        <blockquote>
+          User stories:
+          <ol>
+            <li>I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: January 1, 2016).</li>
+            <li>If it does, it returns both the Unix timestamp and the natural language form of that date.</li>
+            <li>If it does not contain a date or Unix timestamp, it returns null for those properties.</li>
+          </ol>
+        </blockquote>
+
+        <p class='title is-4'>Example Usage</p>
+        <code>
+          https://andrkrn-timestamp.herokuapp.com/January 14, 2016
+        </code>
+        <br>
+        <br>
+        <p class='subtitle is-5'>
+          Valid date formats:
+        </p>
+        <ol>
+          <li>MMMM DD, YYYY</li>
+          <li>MMMM-DD-YYYY</li>
+          <li>DD MMMM YYYY</li>
+          <li>DD MMMM, YYYY</li>
+          <li>DD-MMMM-YYYY</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
