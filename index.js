@@ -16,6 +16,16 @@ app.set('port', (process.env.PORT || 3000));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/whoami', function(req, res) {
+  let ipaddresss = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+
+  res.send({
+    'ipaddresss': ipaddresss,
+    'language': req.headers['accept-language'],
+    'software': req.headers['user-agent']
+  })
+});
+
 app.get('/:timestamp', function(req, res) {
   let time = moment(req.params.timestamp, acceptable_formats, true);
   time = time.isValid() ? time : moment.unix(req.params.timestamp);
